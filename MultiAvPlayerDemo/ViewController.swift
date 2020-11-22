@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     var playerLayer3: AVPlayerLayer!
     var playerLayer4: AVPlayerLayer!
     
-    let mainVideoWidth = 16 * 16
-    let mainVideoHeight = 9 * 16
+    let mainVideoWidth = 16 * 20
+    let mainVideoHeight = 9 * 20
     let sideVideoWidth = 16 * 12
     let sideVideoHeight = 9 * 12
     let marginX = 40
@@ -133,23 +133,6 @@ class ViewController: UIViewController {
         self.view.layer.addSublayer(playerLayer4)
 
         player.play()
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-       //最初の画面呼び出しで画面を右横画面に変更させる。
-       UIDevice.current.setValue(3, forKey: "orientation")
-       return .landscapeRight
-    }
-
-     // 画面を自動で回転させるかを決定する。
-     override var shouldAutorotate: Bool {
-        //画面が縦だった場合は回転させない
-       if(UIDevice.current.orientation.rawValue == 1){
-            return false
-      }
-        else{
-            return true
-      }
     }
     
     //タッチをした時
